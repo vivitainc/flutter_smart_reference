@@ -16,6 +16,7 @@ export 'src/iterable_extensions.dart';
 export 'src/list_extensions.dart';
 export 'src/lock_extensions.dart';
 export 'src/map_extensions.dart';
+export 'src/object_extensions.dart';
 export 'src/set_extensions.dart';
 export 'src/streams.dart';
 export 'src/uint8list_extensions.dart';
