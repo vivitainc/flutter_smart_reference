@@ -13,6 +13,24 @@ extension IterableExtensions<T> on Iterable<T> {
   Iterable<T2> whereNonNull<T2>() {
     return where((element) => element != null).map((e) => e! as T2);
   }
+
+  /// Iteratorの要素数が1以上の場合にListへ変換し、Emptyであればnullに変換する
+  List<T>? toListOrNullEmpty() {
+    if (isEmpty) {
+      return null;
+    } else {
+      return toList();
+    }
+  }
+
+  /// Iteratorの要素数が1以上の場合にListへ変換し、Emptyであればnullに変換する
+  Set<T>? toSetOrNullEmpty() {
+    if (isEmpty) {
+      return null;
+    } else {
+      return toSet();
+    }
+  }
 }
 
 extension MapEntryIterableExtensions<K, V> on Iterable<MapEntry<K, V>> {
