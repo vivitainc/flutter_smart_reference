@@ -1,6 +1,8 @@
 library stdlib_plus;
 
 export 'src/assertion.dart';
+export 'src/disposable.dart';
+export 'src/disposable_extensions.dart';
 export 'src/environments.dart';
 export 'src/error/illegal_argument_exception.dart';
 export 'src/error/illegal_state_exception.dart';
