@@ -15,6 +15,7 @@ dependencies:
   tuple: ^2.0.0
   crypto: ^3.0.1
   semaphore: ^0.2.0
+  dartx: ^1.0.0
 
 dev_dependencies:
   flutter_test:
