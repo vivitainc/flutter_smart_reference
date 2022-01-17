@@ -43,5 +43,11 @@
             "command": "./gradlew --parallel --stacktrace flutterCompileProto3",
             "problemMatcher": []
         },
+        {
+            "label": "flutter > Run Unit Test",
+            "type": "shell",
+            "command": "./gradlew flutterTest",
+            "problemMatcher": [],
+        },
     ]
 }
