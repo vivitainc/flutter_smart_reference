@@ -2,14 +2,17 @@ library stdlib_plus;
 
 export 'src/assertion.dart';
 export 'src/build_context_extension.dart';
+export 'src/directory_extensions.dart';
 export 'src/disposable.dart';
 export 'src/disposable_extensions.dart';
 export 'src/element_extension.dart';
 export 'src/environments.dart';
+export 'src/error/file_io_exception.dart';
 export 'src/error/illegal_argument_exception.dart';
 export 'src/error/illegal_state_exception.dart';
 export 'src/error/runtime_exception.dart';
 export 'src/error/unsupported_platform_exception.dart';
+export 'src/file_extensions.dart';
 export 'src/functions.dart';
 export 'src/int_extensions.dart';
 export 'src/iterable_extensions.dart';
