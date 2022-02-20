@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'element_extension.dart';
 
-extension BuildContextCoreExtension on BuildContext {
+extension BuildContextFindElementByType on BuildContext {
   /// Elementの子孫を辿り、指定の型のWidgetを検索する.
   /// 特定Interfaceを検索できるよう、型はWidgetに限定しない.
   ///

@@ -1,12 +1,4 @@
-extension SetExtensions<T> on Set<T> {
-  /// Listに新たな要素を末尾へ加えたコピーを作成する.
-  Set<T> copyWithAddElement(T element) {
-    // コピーを行う
-    final copied = {...this};
-    copied.add(element);
-    return copied;
-  }
-
+extension SetCopyWhere<T> on Set<T> {
   /// [test] がtrueを返却したElementを使用して新たなコピーを返却する.
   ///
   /// 1件も一致しない場合、返却値は空Listとなる.
@@ -22,7 +14,17 @@ extension SetExtensions<T> on Set<T> {
   }
 }
 
-extension SetIterableExtensions<T> on Iterable<Set<T>> {
+extension SetCopyWithAddElement<T> on Set<T> {
+  /// Listに新たな要素を末尾へ加えたコピーを作成する.
+  Set<T> copyWithAddElement(T element) {
+    // コピーを行う
+    final copied = {...this};
+    copied.add(element);
+    return copied;
+  }
+}
+
+extension SetIterableFlatten<T> on Iterable<Set<T>> {
   /// SetのListを1つのSetにまとめる.
   Set<T> flatten() {
     final result = <T>{};

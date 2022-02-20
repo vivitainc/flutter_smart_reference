@@ -1,4 +1,4 @@
-extension IntExtensions on int {
+extension IntToHexString on int {
   /// 16進数の値に変換する.
   ///
   /// 戻り値は必ず小文字である。そのため、 `FF` のような大文字を期待する場合、upperCase等で変換を行うこと.

@@ -7,31 +7,39 @@ import 'package:flutter/foundation.dart';
 
 import 'error/file_io_exception.dart';
 
-extension FileExtensions on io.File {
-  /// ファイルのSHA1を計算する.
-  /// ファイル読み込み中に問題が発生した場合、io.Fileからの例外をそのまま投げる.
-  Future<crypt.Digest> calculateSha1() async {
-    return crypt.sha1.bind(openRead()).first;
-  }
-
-  /// ファイルのSHA256を計算する.
-  /// ファイル読み込み中に問題が発生した場合、io.Fileからの例外をそのまま投げる.
-  Future<crypt.Digest> calculateSha256() async {
-    return crypt.sha256.bind(openRead()).first;
-  }
-
-  /// ファイルのSHA512を計算する.
-  /// ファイル読み込み中に問題が発生した場合、io.Fileからの例外をそのまま投げる.
-  Future<crypt.Digest> calculateSha512() async {
-    return crypt.sha512.bind(openRead()).first;
-  }
-
+extension IoFileCalculateMd5 on io.File {
   /// ファイルのMD5を計算する.
   /// ファイル読み込み中に問題が発生した場合、io.Fileからの例外をそのまま投げる.
   Future<crypt.Digest> calculateMd5() async {
     return crypt.md5.bind(openRead()).first;
   }
+}
 
+extension IoFileCalculateSha1 on io.File {
+  /// ファイルのSHA1を計算する.
+  /// ファイル読み込み中に問題が発生した場合、io.Fileからの例外をそのまま投げる.
+  Future<crypt.Digest> calculateSha1() async {
+    return crypt.sha1.bind(openRead()).first;
+  }
+}
+
+extension IoFileCalculateSha256 on io.File {
+  /// ファイルのSHA256を計算する.
+  /// ファイル読み込み中に問題が発生した場合、io.Fileからの例外をそのまま投げる.
+  Future<crypt.Digest> calculateSha256() async {
+    return crypt.sha256.bind(openRead()).first;
+  }
+}
+
+extension IoFileCalculateSha512 on io.File {
+  /// ファイルのSHA512を計算する.
+  /// ファイル読み込み中に問題が発生した場合、io.Fileからの例外をそのまま投げる.
+  Future<crypt.Digest> calculateSha512() async {
+    return crypt.sha512.bind(openRead()).first;
+  }
+}
+
+extension IoFileSafeWriteBytes on io.File {
   /// Dart SDKのFile書き込み不具合を避け、可能な限り確実にファイルを書き込む.
   ///
   /// 大容量ファイルの書き込みを分割チェックして行うため、適切な [blockSize] を指定する.

@@ -1,6 +1,6 @@
 name: stdlib_plus
 description: Utils for Flutter app.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/vivitainc/flutter_stdlib_plus
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
