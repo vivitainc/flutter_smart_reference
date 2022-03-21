@@ -1,5 +1,6 @@
 name: smart_reference
-description: Utils for Flutter app.
+description: |
+  Smart Reference(Smart Pointer) object for Flutter.
 version: 0.0.2
 homepage: https://github.com/vivitainc/flutter_smart_reference
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
@@ -11,11 +12,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  rxdart: ^0.27.2
-  tuple: ^2.0.0
-  crypto: ^3.0.1
-  semaphore: ^0.2.0
-  dartx: ^1.0.0
   runtime_assert: ^0.0.1
 
 dev_dependencies:
