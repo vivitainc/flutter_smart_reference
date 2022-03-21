@@ -1,7 +1,7 @@
-name: stdlib_plus
+name: smart_reference
 description: Utils for Flutter app.
 version: 0.0.2
-homepage: https://github.com/vivitainc/flutter_stdlib_plus
+homepage: https://github.com/vivitainc/flutter_smart_reference
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 environment:
@@ -16,6 +16,7 @@ dependencies:
   crypto: ^3.0.1
   semaphore: ^0.2.0
   dartx: ^1.0.0
+  runtime_assert: ^0.0.1
 
 dev_dependencies:
   flutter_test:

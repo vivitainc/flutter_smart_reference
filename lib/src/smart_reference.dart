@@ -1,5 +1,4 @@
-import '../assertion.dart';
-import '../disposable.dart';
+import 'package:runtime_assert/runtime_assert.dart';
 
 /// C++のsmart_ptrに相当する参照カウンタ付きオブジェクトを管理する.
 ///
@@ -15,20 +14,20 @@ class SmartReference<T> {
   var _count = 1;
 
   /// 解放関数
-  final void Function(T reference) _release;
+  final void Function(T reference) _dispose;
 
   /// 参照カウンタ付きオブジェクトを生成する.
   factory SmartReference.wrap({
     required T reference,
-    required void Function(T reference) release,
+    required void Function(T reference) dispose,
   }) {
-    return SmartReference._(reference, release);
+    return SmartReference._(reference, dispose);
   }
 
-  SmartReference._(this._reference, this._release);
+  SmartReference._(this._reference, this._dispose);
 
   @override
-  int get hashCode => _reference.hashCode;
+  int get hashCode => _reference.hashCode ^ _count.hashCode ^ _dispose.hashCode;
 
   @override
   bool operator ==(Object other) {
@@ -36,7 +35,10 @@ class SmartReference<T> {
       return true;
     }
 
-    return other is SmartReference<T> && other._reference == _reference;
+    return other is SmartReference<T> &&
+        other._reference == _reference &&
+        other._count == _count &&
+        other._dispose == _dispose;
   }
 
   /// 参照カウンタを増やす
@@ -65,15 +67,7 @@ class SmartReference<T> {
     check(_count > 0, 'Invalid reference count');
     --_count;
     if (_count == 0) {
-      _release(_reference);
+      _dispose(_reference);
     }
-  }
-
-  /// Disposableオブジェクトをwrapする
-  static SmartReference<T2> disposable<T2 extends Disposable>(T2 reference) {
-    return SmartReference<T2>._(
-      reference,
-      (reference) => reference.dispose(),
-    );
   }
 }
