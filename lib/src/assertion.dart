@@ -85,8 +85,4 @@ T requireNotNull<T>(final T? value, dynamic message) {
   return value;
 }
 
-/// 指定した2つの型が同一であればtrue.
-/// これはGenericsのTypeチェックに利用する.
-bool typesEqual<T1, T2>() => T1 == T2;
-
 typedef GetAssertionMessage = String Function();
